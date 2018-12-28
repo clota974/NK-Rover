@@ -8,7 +8,7 @@ while True:
         sleep(0.01)
 
         # Read a block of 16 bytes from address 80, offset 0
-        block = bus.read_i2c_block_data(0x60, 0, 16)
+        block = bus.read_i2c_block_data(0x60, 0x80, 16)
 
         if former==block:
             continue
