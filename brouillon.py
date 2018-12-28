@@ -15,4 +15,4 @@ while True:
 
         former = block
         # Returned value is a list of 16 bytes
-        print '[{}]'.format(', '.join(hex(x) for x in block))
+        print('[{}]'.format(', '.join(hex(x) for x in block)))
