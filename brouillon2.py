@@ -45,7 +45,7 @@ def powerOnProximity():
 def getProximity():
     while True:
         print(readCommand(0x08))
-        
+
         sleep(0.1)
 
 
@@ -73,7 +73,7 @@ def writeCommandUpper(cmdCode, newValue):
     cmdValue |= newValue << 8
     return writeCommand(cmdCode, cmdValue)
 
-def writeCommandLower(cmdCode, value):
+def writeCommandLower(cmdCode, newValue):
     cmdValue = readCommand(cmdCode)
     cmdValue &= 0xFF00
     cmdValue |= newValue 
