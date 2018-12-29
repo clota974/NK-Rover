@@ -1,4 +1,5 @@
 from smbus2 import SMBus, i2c_msg
+from time import sleep
 
 VCNL4040_ADDR = 0x60
 bus = SMBus(1)
@@ -11,10 +12,42 @@ def i2c_write_byte(data):
 """
 
 def setLedCurrent():
-    led_i_mask = ~((1 << 2) | (1 << 1) | (1 << 0))
+    mask = ~((1 << 2) | (1 << 1) | (1 << 0))
     currentValue = (1 << 2) | (1 << 1) | (1 << 0)
+    bitmask(0x04, True, mask, currentValue)
+
+def setIRDutyCycle():
+    mask = ~((1 << 7) | (1 << 6))
     currentValue = 0
-    bitmask(0x04, True, led_i_mask, currentValue)
+    bitmask(0x03, False, mask, currentValue)
+
+def setProxIntegrationTime():
+    mask = ~((1 << 3) | (1 << 2) | (1 << 1))
+    currentValue = 0
+    bitmask(0x03, False, mask, currentValue)
+
+def setProxResolution():
+    mask = ~((1 << 3))
+    currentValue = (1 << 3)
+    bitmask(0x03, True, mask, currentValue)
+
+def enableSmartPersistance():
+    mask = ~((1 << 4))
+    currentValue = (1 << 1)
+    bitmask(0x04, False, mask, currentValue)
+
+def powerOnProximity():
+    mask = ~((1 << 0))
+    currentValue = 0
+    bitmask(0x03, False, mask, currentValue)
+
+
+def getProximity():
+    while True:
+        print(readCommand(0x08))
+        sleep(0.1)
+
+
 
 def readCommand(cmdCode):
     bus.write_byte(0x60, cmdCode)
@@ -22,7 +55,8 @@ def readCommand(cmdCode):
     return data
 
 def readCommandLower(cmdCode):
-    return False
+    commandValue = readCommand(cmdCode)
+    return (commandValue & 0xFF)
 
 def readCommandUpper(cmdCode):
     commandValue = readCommand(cmdCode)
@@ -39,7 +73,11 @@ def writeCommandUpper(cmdCode, newValue):
     return writeCommand(cmdCode, cmdValue)
 
 def writeCommandLower(cmdCode, value):
-    return False
+    cmdValue = readCommand(cmdCode)
+    cmdValue &= 0xFF00
+    cmdValue |= newValue 
+    return writeCommand(cmdCode, cmdValue)
+
 
 def bitmask(cmdAddr, isUpper, mask, thing):
     registerContents = None
@@ -60,3 +98,8 @@ def bitmask(cmdAddr, isUpper, mask, thing):
 
 
 setLedCurrent()
+setIRDutyCycle()
+setProxIntegrationTime()
+setProxResolution()
+enableSmartPersistance()
+powerOnProximity()
