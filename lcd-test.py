@@ -15,6 +15,10 @@ lcd_d7 = 18
 lcd_red   = 4
 lcd_green = 17
 lcd_blue  = 7  # Pin 7 is CE1
+###### IMPORTANT  ########
+## Connect RW to GND
+## Connect V0 to GND with resistors (along with K)
+
 
 # BeagleBone Black configuration:
 # lcd_rs = 'P8_8'
@@ -40,37 +44,37 @@ lcd = LCD.Adafruit_RGBCharLCD(lcd_rs, lcd_en, lcd_d4, lcd_d5, lcd_d6, lcd_d7,
                               lcd_columns, lcd_rows, lcd_red, lcd_green, lcd_blue)
 
 # Show some basic colors.
-lcd.set_color(1.0, 0.0, 0.0)
+#lcd.set_color(1.0, 0.0, 0.0)
 lcd.clear()
 lcd.message('RED')
 time.sleep(1.0)
 
-lcd.set_color(0.0, 1.0, 0.0)
+#lcd.set_color(0.0, 1.0, 0.0)
 lcd.clear()
 lcd.message('GREEN')
 time.sleep(1.0)
 
-lcd.set_color(0.0, 0.0, 1.0)
+#lcd.set_color(0.0, 0.0, 1.0)
 lcd.clear()
 lcd.message('BLUE')
 time.sleep(1.0)
 
-lcd.set_color(1.0, 1.0, 0.0)
+#lcd.set_color(1.0, 1.0, 0.0)
 lcd.clear()
 lcd.message('YELLOW')
 time.sleep(1.0)
 
-lcd.set_color(0.0, 1.0, 1.0)
+#lcd.set_color(0.0, 1.0, 1.0)
 lcd.clear()
 lcd.message('CYAN')
 time.sleep(1.0)
 
-lcd.set_color(1.0, 0.0, 1.0)
+#lcd.set_color(1.0, 0.0, 1.0)
 lcd.clear()
 lcd.message('MAGENTA')
 time.sleep(1.0)
 
-lcd.set_color(1.0, 1.0, 1.0)
+#lcd.set_color(1.0, 1.0, 1.0)
 lcd.clear()
 lcd.message('WHITE')
 time.sleep(1.0)
