@@ -43,7 +43,9 @@ def powerOnProximity():
 
 
 def getProximity():
+    print("entering")
     while True:
+        print("enter2")
         print(readCommand(0x08))
 
         sleep(0.1)
