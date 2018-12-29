@@ -17,7 +17,7 @@ def setLedCurrent():
 
 def readCommand(cmdCode):
     bus.write_byte(0x60, cmdCode)
-    data = bus.read_i2c_block_data(0x60, 0, 2)
+    data = bus.read_byte_data(0x60, 0, 1)
     return data
 
 def readCommandLower(cmdCode):
