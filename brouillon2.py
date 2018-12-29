@@ -1,4 +1,4 @@
-from smbus2 import SMBus, i2_msg
+from smbus2 import SMBus, i2c_msg
 
 VCNL4040_ADDR = 0x60
 bus = SMBus(1)
