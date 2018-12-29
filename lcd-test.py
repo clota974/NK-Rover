@@ -7,7 +7,7 @@ import Adafruit_CharLCD as LCD
 
 # Raspberry Pi configuration:
 lcd_rs = 27  # Change this to pin 21 on older revision Raspberry Pi's
-lcd_en = 22
+lcd_en = 22 
 lcd_d4 = 25
 lcd_d5 = 24
 lcd_d6 = 23
@@ -43,34 +43,34 @@ lcd = LCD.Adafruit_RGBCharLCD(lcd_rs, lcd_en, lcd_d4, lcd_d5, lcd_d6, lcd_d7,
 lcd.set_color(1.0, 0.0, 0.0)
 lcd.clear()
 lcd.message('RED')
-time.sleep(3.0)
+time.sleep(1.0)
 
 lcd.set_color(0.0, 1.0, 0.0)
 lcd.clear()
 lcd.message('GREEN')
-time.sleep(3.0)
+time.sleep(1.0)
 
 lcd.set_color(0.0, 0.0, 1.0)
 lcd.clear()
 lcd.message('BLUE')
-time.sleep(3.0)
+time.sleep(1.0)
 
 lcd.set_color(1.0, 1.0, 0.0)
 lcd.clear()
 lcd.message('YELLOW')
-time.sleep(3.0)
+time.sleep(1.0)
 
 lcd.set_color(0.0, 1.0, 1.0)
 lcd.clear()
 lcd.message('CYAN')
-time.sleep(3.0)
+time.sleep(1.0)
 
 lcd.set_color(1.0, 0.0, 1.0)
 lcd.clear()
 lcd.message('MAGENTA')
-time.sleep(3.0)
+time.sleep(1.0)
 
 lcd.set_color(1.0, 1.0, 1.0)
 lcd.clear()
 lcd.message('WHITE')
-time.sleep(3.0)
+time.sleep(1.0)
