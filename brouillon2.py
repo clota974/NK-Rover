@@ -31,14 +31,14 @@ def writeCommand(cmdCode, value):
     data = [(value & 0xFF), (value >> 8)]
     bus.write_i2c_block_data(0x60, cmdCode, data)
 
-def writeCommandUpper(cmdCode, value):
+def writeCommandUpper(cmdCode, newValue):
     cmdValue = readCommand(cmdCode)
     cmdValue &= 0x00FF
-    cmdValue |= (uint16_t)newValue << 8
+    cmdValue |= newValue << 8
     return writeCommand(cmdCode, cmdValue)
 
 def writeCommandLower(cmdCode, value):
-    return false
+    return False
 
 def bitmask(cmdAddr, isUpper, mask, thing):
     registerContents = None
