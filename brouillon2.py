@@ -27,6 +27,19 @@ def readCommandUpper(cmdCode):
     commandValue = readCommand(cmdCode)
     return (commandValue >> 8)
 
+def writeCommand(cmdCode, value):
+    data = [(value & 0xFF), (value >> 8)]
+    bus.write_i2c_block_data(0x60, cmdCode, data)
+
+def writeCommandUpper(cmdCode, value):
+    cmdValue = readCommand(cmdCode)
+    cmdValue &= 0x00FF
+    cmdValue |= (uint16_t)newValue << 8
+    return writeCommand(cmdCode, cmdValue)
+
+def writeCommandLower(cmdCode, value):
+    return false
+
 def bitmask(cmdAddr, isUpper, mask, thing):
     registerContents = None
 
@@ -38,5 +51,11 @@ def bitmask(cmdAddr, isUpper, mask, thing):
     registerContents &= mask
 
     registerContents |= thing
+
+    if(isUpper):
+        print(writeCommandUpper(cmdAddr, registerContents))
+    else:
+        writeCommandLower(cmdAddr, registerContents)
+
 
 setLedCurrent()
