@@ -97,7 +97,7 @@ def bitmask(cmdAddr, isUpper, mask, thing):
     if(isUpper):
         print(writeCommandUpper(cmdAddr, registerContents))
     else:
-        writeCommandLower(cmdAddr, registerContents)
+        print(writeCommandLower(cmdAddr, registerContents))
 
 
 setLedCurrent()
