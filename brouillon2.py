@@ -13,6 +13,7 @@ def i2c_write_byte(data):
 def setLedCurrent():
     led_i_mask = ~((1 << 2) | (1 << 1) | (1 << 0))
     currentValue = (1 << 2) | (1 << 1) | (1 << 0)
+    currentValue = 0
     bitmask(0x04, True, led_i_mask, currentValue)
 
 def readCommand(cmdCode):
