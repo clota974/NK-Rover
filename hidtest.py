@@ -46,9 +46,9 @@ while True:
         print("Error\n")
         continue
 
-    p = ' '.join(data)
-    p = p.replace("\r", "")
-    print("\r"+p, end="") 
+    #p = ' '.join(data)
+    #print("\r"+p, end="") 
+    print(data)
     print()
     print()
     sleep(0.1)
