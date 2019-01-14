@@ -25,6 +25,9 @@ while True:
 
         i+=1
     
+    if len(key)<5:
+        continue
+
     i = 0
     while i < len(buf):
         val = format((buf[i+1]<<2*4)+buf[i], "06d")
