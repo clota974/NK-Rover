@@ -42,10 +42,11 @@ while True:
         i+=2
 
     if(data[0]>1 or data[1]>1):
-        continue
+        print("\rError",end="")
+        #continue
 
     #p = ' '.join(data)
     #print("\r"+p, end="") 
-    print("\r",data, end="")
+    print("\r",data, end="\r")
     sleep(0.1)
     sys.stdout.flush()
