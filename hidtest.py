@@ -2,10 +2,10 @@ import os, sys
 from time import sleep
 from io import FileIO
 
-report_fd = os.open("/dev/input/event3", os.O_RDWR | os.O_NONBLOCK)
+report_fd = os.open("/dev/input/js1", os.O_RDWR | os.O_NONBLOCK)
 fd = FileIO(report_fd, "rb+", closefd=False)
 
-defBuf = bytearray(100)
+defBuf = bytearray(214)
 
 while True:
     buf = defBuf 
