@@ -12,7 +12,6 @@ while True:
     r = fd.readinto(buf)
     arr = []
     sign = buf[2]
-    print("Sign = ", sign)
 
     for i in buf:
         try:
@@ -22,7 +21,6 @@ while True:
         except:
             pass
 
-    print(len(arr))
     p = ' '.join(format(x, '02x') for x in arr)
     p = p.replace("\r", "")
     print("\r"+p, end="") 
