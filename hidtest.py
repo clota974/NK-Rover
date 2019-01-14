@@ -10,6 +10,6 @@ defBuf = bytearray(214)
 while True:
     buf = defBuf 
     r = fd.readinto(buf)
-    sys.stdout.write("\r" + (' '.join(format(x, '02x') for x in buf) )) 
-    sys.flush()
+    print(' '.join(format(x, '02x') for x in buf), end="\r") 
     sleep(0.2)
+    sys.stdout.flush()
