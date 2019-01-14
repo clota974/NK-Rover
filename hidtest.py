@@ -20,7 +20,7 @@ while True:
                 key.append(i+2) 
                 key.append(i+3) 
         except Exception as e:
-            print("E:"+e)
+            print("E:"+str(e))
     
     for i in buf:
         if(i in key):
