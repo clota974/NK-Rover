@@ -48,6 +48,6 @@ while True:
 
     #p = ' '.join(data)
     #print("\r"+p, end="") 
-    print("\r"+data)
+    print("\r",data)
     sleep(0.1)
     sys.stdout.flush()
