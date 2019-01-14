@@ -45,8 +45,8 @@ while True:
         print("\rError",end="")
         #continue
 
-    #p = ' '.join(data)
+    p = ' '.join(format(x,"06d") for x in data)
     #print("\r"+p, end="") 
-    print("\r",data, end="\r")
+    print("\r",p, end="\r")
     sleep(0.1)
     sys.stdout.flush()
