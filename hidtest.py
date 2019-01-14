@@ -10,6 +10,7 @@ defBuf = bytearray(214)
 while True:
     buf = defBuf 
     r = fd.readinto(buf)
+    buf = [1,2,3,4,5,0xff]
     p = ' '.join(format(x, '02x') for x in buf)
     print("\r"+p, end="") 
     sleep(0.2)
