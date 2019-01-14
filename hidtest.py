@@ -19,8 +19,8 @@ while True:
             if(buf[i]==sign and buf[i+1]==0):
                 key.append(i+2) 
                 key.append(i+3) 
-        except:
-            pass
+        except Exception as e:
+            print("E:"+e)
     
     for i in buf:
         if(i in key):
