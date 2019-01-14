@@ -15,9 +15,12 @@ while True:
     print("Sign = ", sign)
 
     for i in buf:
-        if(buf[i]==sign and buf[i+1]==0):
+        try:
+            if(buf[i]==sign and buf[i+1]==0):
             arr.append(buf[i+2]) 
             arr.append(buf[i+3]) 
+        except:
+            pass
 
     p = ' '.join(format(x, '02x') for x in arr)
     p = p.replace("\r", "")
