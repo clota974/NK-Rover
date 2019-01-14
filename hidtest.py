@@ -26,8 +26,8 @@ while True:
 
         i+=1
     
-    if len(key)<5 or buf[4]>2:
-        print("\nError")
+    if len(key)<5:
+        print("\nNo keys\n")
         #continue
 
     i = 0
@@ -42,6 +42,9 @@ while True:
         
         i+=2
 
+    if(data[0]>1 or data[1]>1):
+        print("Error\n")
+        continue
 
     p = ' '.join(data)
     p = p.replace("\r", "")
