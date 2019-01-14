@@ -8,6 +8,7 @@ fd = FileIO(report_fd, "rb+", closefd=False)
 defBuf = bytearray(230)
 
 while True:
+    sleep(0.1)
     buf = defBuf 
     r = fd.readinto(buf)
     key = []
@@ -31,7 +32,6 @@ while True:
 
     i = 0
     while i < len(buf):
-        sleep(0.1)
         val = (buf[i+1]<<2*4)+buf[i]
         arr.append(val)
         if(i in key):
