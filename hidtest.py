@@ -27,7 +27,7 @@ while True:
         i+=1
     
     if len(key)<5:
-        print("\nNo keys\n")
+        print("\rNo keys\n")
         #continue
 
     i = 0
@@ -43,13 +43,11 @@ while True:
         i+=2
 
     if(data[0]>1 or data[1]>1):
-        print("Error\n")
+        print("\rError\n")
         continue
 
     #p = ' '.join(data)
     #print("\r"+p, end="") 
-    print(data)
-    print()
-    print()
+    print("\r"+data)
     sleep(0.1)
     sys.stdout.flush()
