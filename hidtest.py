@@ -31,6 +31,7 @@ while True:
 
     i = 0
     while i < len(buf):
+        sleep(0.1)
         val = (buf[i+1]<<2*4)+buf[i]
         arr.append(val)
         if(i in key):
@@ -48,5 +49,5 @@ while True:
     p = ' '.join(format(x,"06d") for x in data)
     #print("\r"+p, end="") 
     print("\r",p, end="\r")
-    sleep(0.1)
+    
     sys.stdout.flush()
