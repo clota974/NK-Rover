@@ -10,16 +10,23 @@ defBuf = bytearray(214)
 while True:
     buf = defBuf 
     r = fd.readinto(buf)
+    key = []
     arr = []
     sign = buf[2]
 
     for i in buf:
         try:
             if(buf[i]==sign and buf[i+1]==0):
-                arr.append(buf[i+2]) 
-                arr.append(buf[i+3]) 
+                key.append(i+2) 
+                key.append(i+3) 
         except:
             pass
+    
+    for i in buf:
+        if(i in key):
+            arr.append(buf[i])
+        else:
+            arr.append(1)
 
     p = ' '.join(format(x, '02x') for x in arr)
     p = p.replace("\r", "")
