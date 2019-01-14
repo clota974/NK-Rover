@@ -15,6 +15,7 @@ while True:
     sign = buf[2]
 
     for i in buf:
+        print(str(i))
         try:
             if(buf[i]==sign and buf[i+1]==0):
                 key.append(i+2) 
