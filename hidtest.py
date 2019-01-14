@@ -12,6 +12,7 @@ while True:
     r = fd.readinto(buf)
     key = []
     arr = []
+    data = []
     sign = buf[2]
 
     i = 0
@@ -25,23 +26,24 @@ while True:
 
         i+=1
     
-    if len(key)<5:
+    if len(key)<5 or buf[4]:
         print("\nPass\n")
         continue
 
     i = 0
     while i < len(buf):
         val = format((buf[i+1]<<2*4)+buf[i], "06d")
+        arr.append(val)
         if(i in key):
-            arr.append(colored.fg("light_gray")+str(i)+":"+colored.attr("reset"))
             arr.append(colored.bg("green")+val+colored.attr("reset"))
+            data.append(val)
         else:
             arr.append(val)
         
         i+=2
 
 
-    p = ' '.join(arr)
+    p = ' '.join(data)
     p = p.replace("\r", "")
     print("\r"+p, end="") 
     print()
