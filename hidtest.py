@@ -24,7 +24,7 @@ while True:
     
     for i in buf:
         if(i in key):
-            arr.append(format(buf[i]), "02x"))
+            arr.append(format(buf[i]), "02x")
         else:
             arr.append("..")
 
