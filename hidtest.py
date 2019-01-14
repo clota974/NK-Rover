@@ -43,7 +43,7 @@ while True:
 
     if(data[0]>1 or data[1]>1):
         print("\rError",end="")
-        #continue
+        continue
 
     p = ' '.join(format(x,"06d") for x in data)
     #print("\r"+p, end="") 
