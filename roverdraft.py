@@ -12,10 +12,11 @@ pwmb = 4
 
 GPIO.setmode(GPIO.BCM)
 
+GPIO.setup([ain2,ain1,bin1,bin2,pwma,pwmb], GPIO.OUT)
+
 _pwma = GPIO.PWM(pwma, 980)
 _pwmb = GPIO.PWM(pwmb, 980)
 
-GPIO.setup([ain2,ain1,bin1,bin2,pwma,pwmb], GPIO.OUT)
 
 report_fd = os.open("/dev/input/js1", os.O_RDWR | os.O_NONBLOCK)
 fd = FileIO(report_fd, "rb+", closefd=False)
