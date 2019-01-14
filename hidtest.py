@@ -33,6 +33,10 @@ while True:
     i = 0
     while i < len(buf):
         val = (buf[i+1]<<2*4)+buf[i]
+
+        if(val & 0x8000 > 0): # If negative
+            val -= 0x10000
+
         arr.append(val)
         if(i in key):
             arr.append(colored.bg("green")+format(val, "=+5d")+colored.attr("reset"))
