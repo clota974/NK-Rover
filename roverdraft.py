@@ -94,6 +94,7 @@ while True:
         GPIO.output(ain2, 1)
         GPIO.output(bin2, 1)
     
+    print(speed)
     _pwma.ChangeDutyCycle(speed)
     _pwmb.ChangeDutyCycle(speed)
 
