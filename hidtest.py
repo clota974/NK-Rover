@@ -1,4 +1,4 @@
-import os
+import os, sys
 from time import sleep
 from io import FileIO
 
@@ -10,5 +10,5 @@ defBuf = bytearray(214)
 while True:
     buf = defBuf 
     r = fd.readinto(buf)
-    print(''.join(format(x, '02x') for x in buf) + "\r")
+    sys.stdout.write("\r" + (' '.join(format(x, '02x') for x in buf) )) 
     sleep(0.2)
