@@ -24,11 +24,12 @@ while True:
     
     for i in buf:
         if(i in key):
-            arr.append(buf[i])
+            format(arr.append(buf[i]), "02x")
         else:
-            arr.append(1)
+            arr.append("||")
 
-    p = ' '.join(format(x, '02x') for x in arr)
+
+    p = ' '.join(arr)
     p = p.replace("\r", "")
     print("\r"+p, end="") 
     print()
