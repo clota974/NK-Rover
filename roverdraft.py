@@ -73,7 +73,7 @@ while True:
 
 
 
-    speed = int(data[20]/0x7fff*100)
+    speed = int(data[19]/0x7fff*100)
 
     if(speed>0):
         GPIO.output(ain1, 1)
