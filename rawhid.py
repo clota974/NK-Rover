@@ -5,7 +5,7 @@ from io import FileIO
 report_fd = os.open("/dev/input/js1", os.O_RDWR | os.O_NONBLOCK)
 fd = FileIO(report_fd, "rb+", closefd=False)
 
-defBuf = bytearray(230)
+defBuf = bytearray(240)
 
 while True:
     buf = defBuf 
