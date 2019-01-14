@@ -14,7 +14,8 @@ while True:
     arr = []
     sign = buf[2]
 
-    for i in buf:
+    i = 0
+    while i < len(buf):
         print(str(i))
         try:
             if(buf[i]==sign and buf[i+1]==0):
@@ -22,12 +23,17 @@ while True:
                 key.append(i+3) 
         except Exception as e:
             print("E:"+str(i))
+
+        i+=1
     
-    for i in buf:
+    i = 0
+    while i < len(buf):
         if(i in key):
             arr.append(format(buf[i], "02x"))
         else:
             arr.append("..")
+        
+        i+=1
 
 
     p = ' '.join(arr)
