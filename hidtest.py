@@ -1,4 +1,4 @@
-import os, sys, datetime
+import os, sys, datetime, colored
 from time import sleep
 from io import FileIO
 
@@ -27,10 +27,11 @@ while True:
     
     i = 0
     while i < len(buf):
+        val = format(buf[i], "02x")
         if(i in key):
-            arr.append(format(buf[i], "02x"))
+            arr.append(colored.bg("green")+val+colored.attr("reset"))
         else:
-            arr.append("..")
+            arr.append(val)
         
         i+=1
 
