@@ -26,7 +26,7 @@ while True:
 
         i+=1
     
-    if len(key)<5 or buf[4]:
+    if len(key)<5 or buf[4]>2:
         print("\nPass\n")
         continue
 
