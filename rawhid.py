@@ -12,14 +12,8 @@ while True:
     r = fd.readinto(buf)
     arr = []
     sign = buf[2]
-    print("Sign = ", sign)
 
-    for i in buf:
-        if(buf[i]==sign and buff[i+1]==0):
-            arr.append(buff[i+2]) 
-            arr.append(buff[i+3]) 
-
-    p = ' '.join(format(x, '02x') for x in arr)
+    p = ' '.join(format(x, '02x') for x in buf)
     p = p.replace("\r", "")
     print("\r"+p, end="") 
     sleep(0.1)
