@@ -26,7 +26,7 @@ while True:
         if(i in key):
             format(arr.append(buf[i]), "02x")
         else:
-            arr.append("||")
+            arr.append("..")
 
 
     p = ' '.join(arr)
