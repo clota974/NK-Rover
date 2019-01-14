@@ -16,13 +16,12 @@ while True:
 
     i = 0
     while i < len(buf):
-        print(str(i))
         try:
             if(buf[i]==sign and buf[i+1]==0):
                 key.append(i+2) 
                 key.append(i+3) 
         except Exception as e:
-            print("E:"+str(i))
+            pass
 
         i+=1
     
