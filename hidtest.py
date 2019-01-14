@@ -13,5 +13,5 @@ while True:
     p = ' '.join(format(x, '02x') for x in buf)
     p = p.replace("\r", "")
     print("\r"+p, end="") 
-    sleep(0.2)
+    sleep(0.1)
     sys.stdout.flush()
