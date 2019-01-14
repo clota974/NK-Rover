@@ -11,7 +11,7 @@ while True:
     buf = defBuf 
     r = fd.readinto(buf)
     p = ' '.join(format(x, '02x') for x in buf)
-    print(buf)
+    p = p.replace("\r", "")
     print("\r"+p, end="") 
     sleep(0.2)
     sys.stdout.flush()
