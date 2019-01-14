@@ -10,5 +10,5 @@ defBuf = bytearray(214)
 while True:
     buf = defBuf 
     r = fd.readinto(buf)
-    print("\r"+''.join(format(x, '02x') for x in buf))
+    print(''.join(format(x, '02x') for x in buf) + "\r")
     sleep(0.2)
