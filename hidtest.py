@@ -27,7 +27,7 @@ while True:
     
     i = 0
     while i < len(buf):
-        val = format((buf[i+1]<<2*4)+buf[i], "04x")
+        val = format((buf[i+1]<<2*4)+buf[i], "06d")
         if(i in key):
             arr.append(colored.fg("light_gray")+str(i)+":"+colored.attr("reset"))
             arr.append(colored.bg("green")+val+colored.attr("reset"))
