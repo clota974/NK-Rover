@@ -17,11 +17,12 @@ while True:
     for i in buf:
         try:
             if(buf[i]==sign and buf[i+1]==0):
-            arr.append(buf[i+2]) 
-            arr.append(buf[i+3]) 
+                arr.append(buf[i+2]) 
+                arr.append(buf[i+3]) 
         except:
             pass
 
+    print(len(arr))
     p = ' '.join(format(x, '02x') for x in arr)
     p = p.replace("\r", "")
     print("\r"+p, end="") 
