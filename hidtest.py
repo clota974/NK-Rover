@@ -27,13 +27,13 @@ while True:
     
     i = 0
     while i < len(buf):
-        val = format(buf[i], "02x")
+        val = format(buf[i]+buf[i+1], "02x")
         if(i in key):
             arr.append(colored.bg("green")+val+colored.attr("reset"))
         else:
             arr.append(val)
         
-        i+=1
+        i+=2
 
 
     p = ' '.join(arr)
