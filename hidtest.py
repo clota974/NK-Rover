@@ -32,10 +32,10 @@ while True:
 
     i = 0
     while i < len(buf):
-        val = format((buf[i+1]<<2*4)+buf[i], "06d")
+        val = (buf[i+1]<<2*4)+buf[i]
         arr.append(val)
         if(i in key):
-            arr.append(colored.bg("green")+val+colored.attr("reset"))
+            arr.append(colored.bg("green")+format((val, "06d")+colored.attr("reset"))
             data.append(val)
         else:
             arr.append(val)
