@@ -82,6 +82,7 @@ while True:
         GPIO.output(ain2, 0)
         GPIO.output(bin2, 0)
     elif(speed<0):
+        speed*=-1
         GPIO.output(ain1, 0)
         GPIO.output(bin1, 0)
 
@@ -94,7 +95,6 @@ while True:
         GPIO.output(ain2, 1)
         GPIO.output(bin2, 1)
     
-    print(speed)
     _pwma.ChangeDutyCycle(speed)
     _pwmb.ChangeDutyCycle(speed)
 
