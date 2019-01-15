@@ -76,13 +76,14 @@ while True:
     speed = int(data[19]/0x7fff*100)
 
     if(speed<0):
+        speed*=-1
+
         GPIO.output(ain1, 1)
         GPIO.output(bin1, 1)
 
         GPIO.output(ain2, 0)
         GPIO.output(bin2, 0)
     elif(speed>0):
-        speed*=-1
         GPIO.output(ain1, 0)
         GPIO.output(bin1, 0)
 
