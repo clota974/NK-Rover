@@ -74,7 +74,7 @@ while True:
 
 
     speed = int(data[19]/0x7fff*100)
-    side = abs(int(data[16]/0x7fff*50))
+    side = abs(int(data[14]/0x7fff*50))
 
 
     if(speed<0):
