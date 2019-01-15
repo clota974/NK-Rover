@@ -62,7 +62,7 @@ while True:
         
         i+=2
 
-    if(data[0]>1 or data[1]>1):
+    if(data[0]>1 or data[1]>1 or data[0]<0 or data[1]<0):
         print("\rError",end="")
         continue
 
