@@ -101,8 +101,8 @@ while True:
     left = speed*(side/100)
     right = speed*((100-side)/100)
 
-    _pwma.start(left)
-    _pwmb.start(right)
+    _pwma.start(right)
+    _pwmb.start(left)
 
     
     
