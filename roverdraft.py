@@ -14,8 +14,8 @@ GPIO.setmode(GPIO.BCM)
 
 GPIO.setup([ain2,ain1,bin1,bin2,pwma,pwmb], GPIO.OUT)
 
-_pwma = GPIO.PWM(pwma, 980)
-_pwmb = GPIO.PWM(pwmb, 980)
+_pwma = GPIO.PWM(pwma, 1960)
+_pwmb = GPIO.PWM(pwmb, 1960)
 
 
 report_fd = os.open("/dev/input/js1", os.O_RDWR | os.O_NONBLOCK)
@@ -100,10 +100,6 @@ while True:
     
     left = speed*(side/100) or 2
     right = speed*((100-side)/100) or 2
-
-    if(speed==0):
-        left = speed
-        right = speed
 
     _pwma.start(right)
     _pwmb.start(left)
