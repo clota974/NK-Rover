@@ -98,8 +98,8 @@ while True:
         GPIO.output(ain2, 1)
         GPIO.output(bin2, 1)
     
-    left = speed*(side/100)
-    right = speed*((100-side)/100)
+    left = speed*(side/100) or 2
+    right = speed*((100-side)/100) or 2
 
     _pwma.start(right)
     _pwmb.start(left)
