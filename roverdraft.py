@@ -74,6 +74,8 @@ while True:
 
 
     speed = int(data[19]/0x7fff*100)
+    side = abs(int(data[16]/0x7fff*50))
+
 
     if(speed<0):
         speed*=-1
@@ -96,8 +98,11 @@ while True:
         GPIO.output(ain2, 1)
         GPIO.output(bin2, 1)
     
-    _pwma.start(speed)
-    _pwmb.start(speed)
+    left = speed*(side/100)
+    right = abs(speed*((side-100))
+
+    _pwma.start(right)
+    _pwmb.start(left)
 
     
     
