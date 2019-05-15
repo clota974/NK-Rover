@@ -32,7 +32,8 @@ while True:
         if(i in key):
             arr.append(str(i)+colored.bg("red")+str(val)+colored.attr("reset"))
         else:
-            arr.append(str(i)+str(val))
+            #arr.append(str(i)+str(val))
+            pass
         
         i+=1
 
