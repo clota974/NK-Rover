@@ -28,9 +28,9 @@ while True:
     i = 0
     while i < len(buf):
         val = format(buf[i], "02x")
-        val = buf[i]
+        #val = buf[i]
         if(i in key):
-            arr.append(str(i)+colored.bg("red")+str(val)+colored.attr("reset"))
+            arr.append(str(i)+colored.bg("red")+val+colored.attr("reset"))
         else:
             #arr.append(str(i)+str(val))
             pass
