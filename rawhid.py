@@ -26,10 +26,11 @@ while True:
         i+=1
     
     i = 0
+    if(buf[5]!=0):
+        arr.append(colored.bg("blue")+"!!"+colored.attr("reset"))
+
     while i < len(buf):
         val = format(buf[i], "02x")
-        if(buf[5]!=0):
-            val.append(colored.bg("blue")+"!!"+colored.attr("reset"))
         if(i in key):
             arr.append(str(i)+colored.bg("red")+val+colored.attr("reset"))
         else:
