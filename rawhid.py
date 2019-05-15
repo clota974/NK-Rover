@@ -29,7 +29,7 @@ while True:
     while i < len(buf):
         val = format(buf[i], "02x")
         print(buf)
-        print()
+        print(buf[4])
         print()
         #val = buf[i]
         if(i in key):
