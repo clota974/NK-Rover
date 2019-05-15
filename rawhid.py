@@ -32,10 +32,9 @@ while True:
         if(i in key):
             arr.append(str(i)+colored.bg("red")+str(val)+colored.attr("reset"))
         else:
-            arr.append(val)
+            arr.append(str(i)+str(val))
         
         i+=1
-
 
     p = ' '.join(arr)
     p = p.replace("\r", "")
