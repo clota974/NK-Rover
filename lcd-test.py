@@ -12,7 +12,9 @@ lcd_d4        = 8
 lcd_d5        = 7
 lcd_d6        = 5
 lcd_d7        = 6
-lcd_backlight = 12
+lcd_red   = 12
+lcd_green = 13
+lcd_blue  = 19  # Pin 7 is CE1
 
 # BeagleBone Black configuration:
 # lcd_rs        = 'P8_8'
@@ -33,7 +35,7 @@ lcd_rows    = 2
 
 # Initialize the LCD using the pins above.
 lcd = LCD.Adafruit_CharLCD(lcd_rs, lcd_en, lcd_d4, lcd_d5, lcd_d6, lcd_d7,
-                           lcd_columns, lcd_rows, lcd_backlight)
+                           lcd_columns, lcd_rows, lcd_red, lcd_green, lcd_blue)
 
 # Print a two line message
 lcd.message('Hello\nworld!')
@@ -82,3 +84,40 @@ lcd.clear()
 lcd.message('Goodbye!')
 # Turn backlight on.
 lcd.set_backlight(1)
+
+
+# Show some basic colors.
+lcd.set_color(1.0, 0.0, 0.0)
+lcd.clear()
+lcd.message('RED')
+time.sleep(3.0)
+
+lcd.set_color(0.0, 1.0, 0.0)
+lcd.clear()
+lcd.message('GREEN')
+time.sleep(3.0)
+
+lcd.set_color(0.0, 0.0, 1.0)
+lcd.clear()
+lcd.message('BLUE')
+time.sleep(3.0)
+
+lcd.set_color(1.0, 1.0, 0.0)
+lcd.clear()
+lcd.message('YELLOW')
+time.sleep(3.0)
+
+lcd.set_color(0.0, 1.0, 1.0)
+lcd.clear()
+lcd.message('CYAN')
+time.sleep(3.0)
+
+lcd.set_color(1.0, 0.0, 1.0)
+lcd.clear()
+lcd.message('MAGENTA')
+time.sleep(3.0)
+
+lcd.set_color(1.0, 1.0, 1.0)
+lcd.clear()
+lcd.message('WHITE')
+time.sleep(3.0)
