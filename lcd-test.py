@@ -41,21 +41,21 @@ lcd = LCD.Adafruit_RGBCharLCD(lcd_rs, lcd_en, lcd_d4, lcd_d5, lcd_d6, lcd_d7,
 lcd.message('Hello\nworld!')
 
 # Wait 5 seconds
-time.sleep(5.0)
+time.sleep(1.0)
 
 # Demo showing the cursor.
 lcd.clear()
 lcd.show_cursor(True)
 lcd.message('Show cursor')
 
-time.sleep(5.0)
+time.sleep(1.0)
 
 # Demo showing the blinking cursor.
 lcd.clear()
 lcd.blink(True)
 lcd.message('Blink cursor')
 
-time.sleep(5.0)
+time.sleep(1.0)
 
 # Stop blinking and showing cursor.
 lcd.show_cursor(False)
@@ -75,49 +75,18 @@ for i in range(lcd_columns-len(message)):
 # Demo turning backlight off and on.
 lcd.clear()
 lcd.message('Flash backlight\nin 5 seconds...')
-time.sleep(5.0)
+time.sleep(1.0)
 # Turn backlight off.
 lcd.set_backlight(0)
-time.sleep(2.0)
+time.sleep(1.0)
 # Change message.
 lcd.clear()
 lcd.message('Goodbye!')
 # Turn backlight on.
-lcd.set_backlight(1)
 
 
 # Show some basic colors.
 lcd.set_color(1.0, 0.0, 0.0)
 lcd.clear()
 lcd.message('RED')
-time.sleep(3.0)
-
-lcd.set_color(0.0, 1.0, 0.0)
-lcd.clear()
-lcd.message('GREEN')
-time.sleep(3.0)
-
-lcd.set_color(0.0, 0.0, 1.0)
-lcd.clear()
-lcd.message('BLUE')
-time.sleep(3.0)
-
-lcd.set_color(1.0, 1.0, 0.0)
-lcd.clear()
-lcd.message('YELLOW')
-time.sleep(3.0)
-
-lcd.set_color(0.0, 1.0, 1.0)
-lcd.clear()
-lcd.message('CYAN')
-time.sleep(3.0)
-
-lcd.set_color(1.0, 0.0, 1.0)
-lcd.clear()
-lcd.message('MAGENTA')
-time.sleep(3.0)
-
-lcd.set_color(1.0, 1.0, 1.0)
-lcd.clear()
-lcd.message('WHITE')
 time.sleep(3.0)
