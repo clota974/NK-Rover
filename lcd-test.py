@@ -6,13 +6,13 @@ import Adafruit_CharLCD as LCD
 
 
 # Raspberry Pi pin configuration:
-lcd_rs        = 27  # Note this might need to be changed to 21 for older revision Pi's.
-lcd_en        = 22
-lcd_d4        = 25
-lcd_d5        = 24
-lcd_d6        = 23
-lcd_d7        = 18
-lcd_backlight = 4
+lcd_rs        = 9  # Note this might need to be changed to 21 for older revision Pi's.
+lcd_en        = 11
+lcd_d4        = 8
+lcd_d5        = 7
+lcd_d6        = 5
+lcd_d7        = 6
+lcd_backlight = 12
 
 # BeagleBone Black configuration:
 # lcd_rs        = 'P8_8'
