@@ -12,9 +12,9 @@ lcd_d4        = 8
 lcd_d5        = 7
 lcd_d6        = 5
 lcd_d7        = 6
-lcd_red   = 32
+lcd_red   = 12
 lcd_green = 13
-lcd_blue  = 35  # Pin 7 is CE1
+lcd_blue  = 19  # Pin 7 is CE1
 
 # BeagleBone Black configuration:
 # lcd_rs        = 'P8_8'
