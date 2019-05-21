@@ -32,7 +32,7 @@ while True:
     while i < len(buf):
         val = format(buf[i], "02x")
         if(i in key):
-            arr.append(str(i)+colored.bg("red")+val+colored.attr("reset"))
+            arr.append(colored.bg("red")+val+colored.attr("reset"))
         else:
             arr.append(str(val))
             pass
