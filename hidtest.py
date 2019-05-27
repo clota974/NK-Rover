@@ -50,7 +50,7 @@ while True:
         print("\rError",end="")
         continue
 
-    p = ' '.join(format(x,"06d") for x in data)
+    p = ' '.join(format(x,"02x") for x in data)
     #print("\r"+p, end="") 
     print("\r",p, end="\r")
     
